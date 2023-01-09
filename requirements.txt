@@ -1,0 +1,7 @@
+flask
+panda
+gunicorn
+scikit-learn
+numpy
+uvicorn
+sentence_transformers
