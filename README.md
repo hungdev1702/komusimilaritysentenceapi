@@ -42,6 +42,7 @@ or POST: http://10.10.41.10:7777/api/services/app/ApiPython/PostSimilarityRatioS
             range(1, len(list)) is list sentences to compare with list[0] - daily today
 
     Input List<string> with list[0] is daily today is string to compare with other in lists:  
+    List result with N - 1 item is percent (%) compare between List[0] (daily today) and List[1], list[2], ... list[n] 
     [
     "He is very handsome",
     "you are very beautifull",
