@@ -5,7 +5,11 @@ from sentence_transformers.util import cos_sim
 
 def GetModel():
     # Use conponent model with Bert model
-    model = SentenceTransformer('bert-base-nli-mean-tokens')
+    # we can use directly this model online (instead of install model) by using line below:
+    # model = SentenceTransformer('bert-base-nli-mean-tokens')
+    # to clone model: run git lfs install and git clone https://huggingface.co/sentence-transformers/bert-base-nli-mean-tokens
+    
+    model = SentenceTransformer('./bert-base-nli-mean-tokens')
     return model
 
 def DisplayInput(listDailySentences):
@@ -35,7 +39,6 @@ def home_page():
 
 @app.route('/api/services/app/ApiPython/PostSimilarityRatioSentences', methods=['POST'])
 def PostSimilarityRatioSentences():
-    print("starting")
     input_data = request.get_json()
     dailies_list = input_data
     # dailies_list[0] is default daily today
@@ -47,12 +50,11 @@ def PostSimilarityRatioSentences():
     # Analysis data:
     data_analysed = AnalysisDataByEmbedding(dailies_list, model)
     result = data_analysed.tolist()
-    print("successed")
+    print("succeeded")
     return result
 
 
 if __name__ == "__main__":
-    print("get model")
     model = GetModel()
-    print(model)
+    # print(model)
     app.run(host='0.0.0.0', port=7777)

@@ -10,6 +10,12 @@ Using Calculate Cosine Similarity to get ouput
 => Ouput is list % similiraty of 1 sentences today daily with sentences corresponding want to compare with today daily.   
 
 
+--- Use model Berd to local:
+git lfs install 
+git clone https://huggingface.co/sentence-transformers/bert-base-nli-mean-tokens
+=> add model same level with app.py to use model
+
+
 --- Run code project in Local:
 Python 3.10.7 <The latest version is preferred>
 IDE: Pycharm or VS code
